@@ -26,21 +26,21 @@ mod fizz_buzz {
 
 pub fn fizz_buzz(number: u8) -> String {
     if is_fizz(number) && is_buzz(number) {
-        return "FizzBuzz".to_string();
+        return "FizzBuzz".to_string()
     }
     if is_fizz(number) {
-        return "fizz".to_string();
+        return "fizz".to_string()
     }
     if is_buzz(number) {
-        return "buzz".to_string();
+        return "buzz".to_string()
     }
-    return number.to_string();
+    number.to_string()
 }
 
 fn is_fizz(number: u8) -> bool {
-    return number % 3 == 0;
+    number % 3 == 0
 }
 
 fn is_buzz(number: u8) -> bool {
-    return number % 5 == 0;
+    number % 5 == 0
 }
