@@ -26,15 +26,14 @@ mod fizz_buzz {
 
 pub fn fizz_buzz(number: u8) -> String {
     if is_fizz(number) && is_buzz(number) {
-        return "FizzBuzz".to_string()
+        "FizzBuzz".to_string()
+    } else if is_fizz(number) {
+        "fizz".to_string()
+    } else if is_buzz(number) {
+        "buzz".to_string()
+    } else {
+        number.to_string()
     }
-    if is_fizz(number) {
-        return "fizz".to_string()
-    }
-    if is_buzz(number) {
-        return "buzz".to_string()
-    }
-    number.to_string()
 }
 
 fn is_fizz(number: u8) -> bool {
