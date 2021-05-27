@@ -64,17 +64,13 @@ fn is_buzz(number: u8) -> bool {
 }
 
 pub fn count_fizzbuzz(start: u8, end: u8) -> u8 {
-    let mut number = start;
     let mut fizzbuzz_count = 0;
-    return loop {
+    for number in start..end {
         if fizzbuzz(number) == "fizzbuzz" {
-            fizzbuzz_count += 1;
-        }
-        number += 1;
-        if end <= number {
-            break fizzbuzz_count;
+            fizzbuzz_count += 1
         }
     }
+    fizzbuzz_count
 }
 
 pub fn fizzbuzz_all(numbers:Vec<u8>) -> Vec<String> {
