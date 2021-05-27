@@ -33,8 +33,13 @@ mod fizz_buzz {
     }
 
     #[test]
-    fn count_fizz_buzz_1to101() {
-        assert_eq!(count_fizz_buzz(1, 101), 6);
+    fn fizz_buzz_all_() {
+        let result = fizz_buzz_all(vec![0, 2,3,5,15]);
+        assert_eq!(result[0], "fizzbuzz");
+        assert_eq!(result[1], "2");
+        assert_eq!(result[2], "fizz");
+        assert_eq!(result[3], "buzz");
+        assert_eq!(result[4], "fizzbuzz");
     }
 }
 
@@ -70,4 +75,12 @@ pub fn count_fizz_buzz(start: u8, end: u8) -> u8 {
             break fizz_buzz_count;
         }
     }
+}
+
+pub fn fizz_buzz_all(numbers:Vec<u8>) -> Vec<String> {
+    let mut result_vec = Vec::new();
+    for num in numbers.iter() {
+        result_vec.push(fizz_buzz(*num));
+    }
+    result_vec
 }
