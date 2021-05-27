@@ -19,14 +19,28 @@ mod fizz_buzz {
 
     #[test]
     fn _15_is_fizzbuzz() {
-        assert_eq!(fizz_buzz(15), "FizzBuzz");
+        assert_eq!(fizz_buzz(15), "fizzbuzz");
     }
 
+    #[test]
+    fn count_fizz_buzz_1to30() {
+        assert_eq!(count_fizz_buzz(1, 30), 1);
+    }
+
+    #[test]
+    fn count_fizz_buzz_1to31() {
+        assert_eq!(count_fizz_buzz(1, 31), 2);
+    }
+
+    #[test]
+    fn count_fizz_buzz_1to101() {
+        assert_eq!(count_fizz_buzz(1, 101), 6);
+    }
 }
 
 pub fn fizz_buzz(number: u8) -> String {
     if is_fizz(number) && is_buzz(number) {
-        "FizzBuzz".to_string()
+        "fizzbuzz".to_string()
     } else if is_fizz(number) {
         "fizz".to_string()
     } else if is_buzz(number) {
@@ -42,4 +56,18 @@ fn is_fizz(number: u8) -> bool {
 
 fn is_buzz(number: u8) -> bool {
     number % 5 == 0
+}
+
+pub fn count_fizz_buzz(start: u8, end: u8) -> u8 {
+    let mut number = start;
+    let mut fizz_buzz_count = 0;
+    return loop {
+        if fizz_buzz(number) == "fizzbuzz" {
+            fizz_buzz_count += 1;
+        }
+        number += 1;
+        if end <= number {
+            break fizz_buzz_count;
+        }
+    }
 }
