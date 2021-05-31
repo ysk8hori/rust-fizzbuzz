@@ -34,7 +34,7 @@ mod fizzbuzz {
 
     #[test]
     fn fizzbuzz_all_() {
-        let result = fizzbuzz_all(vec![0, 2,3,5,15]);
+        let result = fizzbuzz_all(vec![0, 2, 3, 5, 15]);
         assert_eq!(result[0], "fizzbuzz");
         assert_eq!(result[1], "2");
         assert_eq!(result[2], "fizz");
@@ -54,7 +54,6 @@ pub fn fizzbuzz(number: u8) -> String {
         number.to_string()
     }
 }
-
 fn is_fizz(number: u8) -> bool {
     number % 3 == 0
 }
@@ -73,7 +72,7 @@ pub fn count_fizzbuzz(start: u8, end: u8) -> u8 {
     fizzbuzz_count
 }
 
-pub fn fizzbuzz_all(numbers:Vec<u8>) -> Vec<String> {
+pub fn fizzbuzz_all(numbers: Vec<u8>) -> Vec<String> {
     let mut result_vec = Vec::new();
     for num in numbers.iter() {
         result_vec.push(fizzbuzz(*num));
